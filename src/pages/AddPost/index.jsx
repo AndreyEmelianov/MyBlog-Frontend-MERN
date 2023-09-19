@@ -16,6 +16,7 @@ export const AddPost = () => {
   const [title, setTitle] = React.useState('');
   const [tags, setTags] = React.useState('');
   const [imageUrl, setImageUrl] = React.useState('');
+  const [isLoading, setIsLoading] = React.useState(false);
 
   const inputFileRef = React.useRef(null);
 
@@ -36,7 +37,9 @@ export const AddPost = () => {
     }
   };
 
-  const onClickRemoveImage = () => {};
+  const onClickRemoveImage = () => {
+    setImageUrl('');
+  };
 
   const onChange = React.useCallback((value) => {
     setValue(value);
